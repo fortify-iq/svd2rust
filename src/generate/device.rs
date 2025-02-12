@@ -311,7 +311,7 @@ pub fn render(d: &Device, config: &Config, device_x: &mut String) -> Result<Toke
         // NOTE `no_mangle` is used here to prevent linking different minor versions of the device
         // crate as that would let you `take` the device peripherals more than once (one per minor
         // version)
-        #nomangle
+        // #[no_mangle]
         static mut DEVICE_PERIPHERALS: bool = false;
 
         /// All the peripherals.
